@@ -1,20 +1,17 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-function App() {
-  return (
-    <div>
-      <header>
-        <h1>
-          Hello world !
-        </h1>
-      </header>
-      <body>
-        <Button>
-          This is a button !
-        </Button>
-      </body>
-    </div>
-  );
+import Container from '@material-ui/core/Container';
+import{ withTranslation } from 'react-i18next';
+
+function App({ t }) {
+  return <Container maxWidth="sm">
+    <h1>
+      {t('hello world')}
+    </h1>
+    <Button variant="contained" color="primary">
+      {t('button')}
+    </Button>
+  </Container>;
 }
 
-export default App;
+export default withTranslation()(App);
